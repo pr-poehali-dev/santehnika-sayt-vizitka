@@ -68,6 +68,41 @@ const Index = () => {
     }
   ];
 
+  const prices = [
+    {
+      category: "Ремонт смесителей",
+      items: [
+        { name: "Замена картриджа", price: "от 800 ₽" },
+        { name: "Замена прокладок", price: "от 500 ₽" },
+        { name: "Устранение протечки", price: "от 1 000 ₽" }
+      ]
+    },
+    {
+      category: "Установка сантехники",
+      items: [
+        { name: "Установка раковины", price: "от 2 500 ₽" },
+        { name: "Установка унитаза", price: "от 3 000 ₽" },
+        { name: "Установка душевой кабины", price: "от 5 000 ₽" }
+      ]
+    },
+    {
+      category: "Замена труб",
+      items: [
+        { name: "Замена труб (за 1 м)", price: "от 800 ₽" },
+        { name: "Разводка водопровода", price: "от 5 000 ₽" },
+        { name: "Монтаж полипропилена", price: "от 1 000 ₽/м" }
+      ]
+    },
+    {
+      category: "Прочие работы",
+      items: [
+        { name: "Прочистка канализации", price: "от 1 500 ₽" },
+        { name: "Установка радиатора", price: "от 3 500 ₽" },
+        { name: "Выезд мастера", price: "Бесплатно" }
+      ]
+    }
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
@@ -86,6 +121,7 @@ const Index = () => {
           <nav className="hidden md:flex gap-8">
             <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">Главная</a>
             <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">Услуги</a>
+            <a href="#prices" className="text-foreground hover:text-primary transition-colors font-medium">Цены</a>
             <a href="#contacts" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </nav>
           <Button size="lg" className="hidden md:flex">
@@ -176,7 +212,46 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4 bg-muted/30">
+      <section id="prices" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Цены</h2>
+            <p className="text-xl text-muted-foreground">
+              Прозрачное ценообразование — окончательная цена обсуждается после осмотра
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {prices.map((category, index) => (
+              <Card key={index} className="overflow-hidden">
+                <div className="bg-primary text-primary-foreground p-4">
+                  <h3 className="text-xl font-bold">{category.category}</h3>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    {category.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="flex justify-between items-center pb-3 border-b border-border last:border-0 last:pb-0">
+                        <span className="text-foreground">{item.name}</span>
+                        <span className="font-bold text-primary text-lg">{item.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-12 p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl text-center">
+            <Icon name="Info" size={48} className="text-primary mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-3">Точная стоимость после осмотра</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Указанные цены являются ориентировочными. Окончательная стоимость работ определяется после бесплатного выезда мастера и осмотра объекта.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Контакты</h2>
