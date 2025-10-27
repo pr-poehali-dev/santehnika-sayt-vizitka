@@ -134,7 +134,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Icon name="Wrench" size={28} className="text-primary" />
-            <span className="text-2xl font-bold text-foreground">СантехПро</span>
+            <span className="text-2xl font-bold text-foreground">Домашний Мастер</span>
           </div>
           <nav className="hidden md:flex gap-8">
             <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">Главная</a>
@@ -430,10 +430,10 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Icon name="Wrench" size={24} className="text-primary" />
-            <span className="text-xl font-bold">СантехПро</span>
+            <span className="text-xl font-bold">Домашний Мастер</span>
           </div>
           <p className="text-background/70">
-            © 2024 СантехПро. Все права защищены.
+            © 2024 Домашний Мастер. Все права защищены.
           </p>
         </div>
       </footer>
