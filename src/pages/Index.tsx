@@ -103,6 +103,24 @@ const Index = () => {
     }
   ];
 
+  const gallery = [
+    {
+      image: "https://cdn.poehali.dev/projects/08a976ba-5dc6-42a4-97b6-5a7dd41ed590/files/028a1bf0-43ee-4c37-941f-118c451c3018.jpg",
+      title: "Установка смесителя",
+      description: "Современная сантехника премиум-класса"
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/08a976ba-5dc6-42a4-97b6-5a7dd41ed590/files/2c20635c-9ed8-4fc1-8eae-518c27263b80.jpg",
+      title: "Монтаж унитаза",
+      description: "Профессиональная установка сантехники"
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/08a976ba-5dc6-42a4-97b6-5a7dd41ed590/files/56f45331-a284-46ed-bba2-58230584dece.jpg",
+      title: "Установка радиатора",
+      description: "Качественные системы отопления"
+    }
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
@@ -122,6 +140,7 @@ const Index = () => {
             <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">Главная</a>
             <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">Услуги</a>
             <a href="#prices" className="text-foreground hover:text-primary transition-colors font-medium">Цены</a>
+            <a href="#gallery" className="text-foreground hover:text-primary transition-colors font-medium">Работы</a>
             <a href="#contacts" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </nav>
           <Button size="lg" className="hidden md:flex">
@@ -251,7 +270,52 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4">
+      <section id="gallery" className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши работы</h2>
+            <p className="text-xl text-muted-foreground">
+              Примеры выполненных проектов с гарантией качества
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {gallery.map((item, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative aspect-square overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="p-6 text-background">
+                      <h3 className="font-bold text-xl mb-2">{item.title}</h3>
+                      <p className="text-background/90">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground mb-6 text-lg">
+              Более 500 довольных клиентов за 10 лет работы
+            </p>
+            <Button size="lg" className="text-lg" onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Icon name="Phone" size={20} className="mr-2" />
+              Заказать консультацию
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Контакты</h2>
