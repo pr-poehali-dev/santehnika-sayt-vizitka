@@ -163,7 +163,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8">
                   <Icon name="Phone" size={20} className="mr-2" />
-                  +7 (999) 123-45-67
+                  +7 (995) 146-29-28
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}>
                   Оставить заявку
@@ -334,8 +334,8 @@ const Index = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-2">Телефон</h3>
-                      <a href="tel:+79991234567" className="text-xl text-primary hover:underline">
-                        +7 (999) 123-45-67
+                      <a href="tel:+79951462928" className="text-xl text-primary hover:underline">
+                        +7 (995) 146-29-28
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">Ежедневно с 8:00 до 22:00</p>
                     </div>
@@ -347,8 +347,8 @@ const Index = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-2">Email</h3>
-                      <a href="mailto:info@santehpro.ru" className="text-primary hover:underline">
-                        info@santehpro.ru
+                      <a href="mailto:info@domashniy-master.ru" className="text-primary hover:underline">
+                        info@domashniy-master.ru
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">Ответим в течение часа</p>
                     </div>
