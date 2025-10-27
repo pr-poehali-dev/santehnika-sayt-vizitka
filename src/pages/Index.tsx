@@ -171,8 +171,12 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <Icon name="Wrench" size={200} className="text-primary/30" />
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="https://cdn.poehali.dev/projects/08a976ba-5dc6-42a4-97b6-5a7dd41ed590/files/7bc59dda-297f-4747-9ed7-c29f53b438ba.jpg" 
+                  alt="Профессиональный сантехник"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
